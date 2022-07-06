@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration2" doc:name="HTTP Request configuration" doc:id="2fdefab3-75e5-447a-93a5-d3794008926b" >
+		<http:request-connection host="localhost" port="8081" />
+	</http:request-config>
+	<flow name="POSTFlow" doc:id="b9082f95-1b1c-48f6-a903-22755c7b6d44" >
+		<logger level="INFO" doc:name="Logger" doc:id="5ef64272-af3a-43a3-b38c-02f79664bf66" />
+		<http:request method="GET" doc:name="Request" doc:id="8107eceb-32b8-4979-bfe8-9a37c6aefc78" config-ref="HTTP_Request_configuration2" path="post-process"/>
+		<logger level="INFO" doc:name="Logger" doc:id="0bbdd39f-5d6e-4319-ad61-6d8d6797e263" />
+	</flow>
+</mule>
